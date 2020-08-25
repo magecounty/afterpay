@@ -1,0 +1,66 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="apexx_section">
+                <group id="apexxpayment">
+                    <group id="afterpay_gateway" translate="label" type="text" sortOrder="11"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Afterpay Settings</label>
+                        <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                            <label>Enabled</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/afterpay_gateway/active</config_path>
+                        </field>
+                        <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                            <label>Title</label>
+                            <config_path>payment/afterpay_gateway/title</config_path>
+                        </field>
+                        <field id="payment_action" translate="label" type="select" sortOrder="11"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Payment Action</label>
+                            <source_model>Apexx\Afterpay\Model\Adminhtml\Source\PaymentAction</source_model>
+                            <config_path>payment/afterpay_gateway/payment_action</config_path>
+                        </field>
+                        <field id="dynamic_descriptor" translate="label" type="text" sortOrder="12"
+                                       showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Dynamic Descriptor</label>
+                            <config_path>payment/afterpay_gateway/dynamic_descriptor</config_path>
+                        </field>
+                        <field id="shopper_interaction" translate="label" type="text" sortOrder="16"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Shopper Interaction</label>
+                            <config_path>payment/afterpay_gateway/shopper_interaction</config_path>
+                        </field>
+                        <field id="customer_type" translate="label" type="text" sortOrder="17"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Customer Type</label>
+                            <config_path>payment/afterpay_gateway/customer_type</config_path>
+                        </field>
+                        <field id="payment_type" translate="label" type="text" sortOrder="18"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Payment Type</label>
+                            <config_path>payment/afterpay_gateway/payment_type</config_path>
+                        </field>
+                        <field id="countrycreditcard" translate="label" sortOrder="19" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Country Specific Account ID</label>
+                            <frontend_model>Apexx\Afterpay\Block\Adminhtml\Form\Field\CountryCreditCard</frontend_model>
+                            <backend_model>Apexx\Afterpay\Model\Adminhtml\System\Config\CountryCreditCard</backend_model>
+                            <!--<backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>-->
+                        </field>
+                        <field id="webhook_transaction_update" translate="label" type="text" sortOrder="20"
+                               showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Webhook Transaction Update</label>
+                        </field>
+                         <field id="sort_order" translate="label" type="text" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Sort Order</label>
+                            <frontend_class>validate-number</frontend_class>
+                            <config_path>payment/afterpay_gateway/sort_order</config_path>
+                        </field>
+                    </group>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data">
+        <observer name="afterpay_payment_gateway_data_assign"
+                  instance="Apexx\Afterpay\Observer\DataAssignObserver" />
+    </event>
+    <!-- Restrict Afterpay Payment method for Guest Users -->
+    <event name="payment_method_is_active">
+        <observer name="restrict_afterpay_payment_guestcustomer" instance="Apexx\Afterpay\Observer\DisabledAfterpayGuest" />
+    </event>
+     <event name="sales_order_place_after">
+        <observer name="apexx_afterpay_payment_place_order_after" instance="Apexx\Afterpay\Observer\OrderObserver" />
+    </event>
+</config>
